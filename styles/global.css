@@ -1,0 +1,38 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  font-family: "Georgia", serif;
+  display: flex;
+  justify-content: center; /* Центрирует хедер по горизонтали */
+  align-items: center; /* Центрирует элементы по вертикали */
+  flex-direction: column;
+  background-color: #fff9ec;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  width: 100%;
+}

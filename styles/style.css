@@ -1,0 +1,345 @@
+.header {
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.logo {
+  padding: 28px 18px 28px 30px;
+  line-height: 22px;
+  font-family: "Georgia", serif;
+  font-size: 22px;
+  letter-spacing: 0.13em;
+  font-weight: 400;
+}
+
+.logo::after {
+  content: "|"; /* Добавляем вертикальную черточку */
+  margin-left: 18px; /* Отступы для черточки */
+  color: #000; /* Цвет черточки */
+  font-size: 25px; /* Размер черточки */
+}
+
+.menu {
+  padding-top: 29px;
+  padding-bottom: 30px;
+}
+
+.menu-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  list-style: none;
+  gap: 23px;
+}
+
+.list-item-button {
+  font-size: 17px;
+  line-height: 22px;
+  letter-spacing: 0.13em;
+  background: none;
+  border: none;
+  padding: 0px;
+  font-family: "Georgia", serif;
+}
+
+.address {
+  background: none;
+  border: none;
+  display: flex;
+  padding-top: 19px;
+  padding-bottom: 19px;
+  margin-left: auto;
+  padding-right: 29px;
+  gap: 18px;
+}
+
+.social-icon {
+  width: 21px;
+  height: 21px;
+  text-decoration: none;
+  margin-top: 11px;
+}
+
+.button-enter {
+  background: none;
+  background-color: #221009;
+  color: white;
+  font-family: "Georgia", serif;
+  font-size: 22px;
+  line-height: 23px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  padding: 10px 44px;
+  letter-spacing: 0.13em;
+  margin-left: 18px;
+}
+
+.section-about {
+  padding-left: 40px;
+  padding-right: 40px;
+  background-color: #221009;
+  display: flex;
+  gap: 187px;
+  color: #fff9ec;
+  font-family: "Georgia", serif;
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  padding-top: 73px;
+  padding-left: 118px;
+}
+
+.photo-container {
+  width: 100%;
+  height: auto;
+  padding-top: 41px;
+  padding-bottom: 40px;
+  padding-left: 2px;
+}
+
+.photos {
+  max-width: 458px;
+}
+
+.about-tittle {
+  font-size: 30px;
+  line-height: 43px;
+  letter-spacing: 5px;
+  font-weight: 700;
+}
+
+.tittle-bottom {
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 0.13em;
+  font-weight: 100;
+  padding-top: 25px;
+}
+
+.button-about {
+  background: none;
+  background-color: #fff9ec;
+  color: #221009;
+  font-family: "Georgia", serif;
+  font-size: 22px;
+  line-height: 22px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  padding: 12px 44px;
+  letter-spacing: 0.13em;
+  width: 200px;
+}
+
+.section-about-logo {
+  display: flex;
+  padding: 9px 70px 16px 70px;
+  gap: 98px;
+}
+
+.guild {
+  width: 83px;
+  height: 83px;
+  margin-top: 3px;
+}
+
+.tubar {
+  width: 109px;
+  height: 56px;
+  margin-top: 19px;
+}
+
+.fin {
+  width: 241px;
+  height: 78px;
+}
+
+.mgimo {
+  width: 110px;
+  height: 83px;
+  margin-top: 6px;
+}
+
+.sin {
+  width: 269px;
+  height: 42px;
+  margin-top: 27px;
+  padding-left: 3px;
+}
+
+.olimp {
+  width: 75px;
+  height: 83px;
+  margin-top: 6px;
+}
+
+.section-buttons {
+  padding: 45px 157px;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 29px;
+  column-gap: 20px;
+}
+
+.teaching {
+  padding: 0px;
+  border: none;
+  border-radius: 15px;
+  background-color: #221009;
+  color: white;
+  font-family: "Georgia", serif;
+  font-size: 22px;
+  line-height: 23px;
+  letter-spacing: 0.13em;
+  width: 286px;
+  height: 97px;
+  display: flex;
+  word-wrap: break-word;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-news {
+  padding-left: 157px;
+  padding-right: 157px;
+  display: flex;
+  flex-direction: column;
+  gap: 71px;
+  padding-top: 46px;
+  padding-bottom: 102px;
+  align-items: center;
+  position: relative;
+}
+
+.news-about-text {
+  font-family: "Georgia", serif;
+  font-size: 22px;
+  line-height: 23px;
+  letter-spacing: 0.13em;
+  font-weight: 400;
+}
+
+.news-about-text::after {
+  content: "";
+  display: block;
+  width: 234px;
+  height: 2px;
+  background-color: black;
+  position: absolute;
+  top: 82px;
+  left: 643px;
+}
+
+.news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+.news-list-item {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  background-color: white;
+  padding: 36px 30px 71px 30px;
+  border-radius: 15px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+  position: relative;
+}
+
+.button-read-more {
+  position: absolute;
+  bottom: 22px;
+  right: 30px;
+  border-radius: 15px;
+  font-family: "Georgia", serif;
+  background-color: #fff9ec;
+  padding: 12px 66px 12px 31px;
+  box-shadow: 4px 4px 10px rgba(55, 52, 52, 0.25);
+  border: 1px solid rgba(34, 16, 9, 0.4);
+  font-size: 17px;
+  line-height: 23px;
+  letter-spacing: 0.13em;
+  font-weight: 400;
+}
+
+.button-read-more::after {
+  content: ""; /* Стрелка, можно использовать символ или сделать через градиент */
+  background-image: url("../images/Arrow2.svg");
+  width: 25px;
+  height: 15px;
+  position: absolute;
+  right: 15px; /* Позиция изображения стрелки */
+  bottom: 16px;
+}
+
+.news-text {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-family: "Georgia", serif;
+}
+
+.news-data {
+  font-size: 17px;
+  line-height: 23px;
+  letter-spacing: 0.13em;
+  font-weight: 700;
+}
+
+.news-name {
+  font-size: 17px;
+  line-height: 36px;
+  letter-spacing: 0.13em;
+  font-weight: 700;
+}
+
+.news-info {
+  font-size: 17px;
+  line-height: 28px;
+  letter-spacing: 0.14em;
+  font-weight: 400;
+  align-self: flex-end;
+  margin-top: auto;
+  padding-bottom: 10px;
+}
+
+.news-main-photo {
+  width: 323px;
+  height: 216px;
+  margin-top: 34px;
+}
+
+.footer {
+  background-color: #221009;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+  padding-left: 181px;
+  padding-right: 158px;
+  padding-bottom: 10px;
+}
+
+.logo-footer {
+  line-height: 22px;
+  font-family: "Georgia", serif;
+  font-size: 22px;
+  letter-spacing: 0.13em;
+  font-weight: 400;
+  padding-top: 58px;
+}
+
+.footer-style {
+  color: #fff9ec;
+}
