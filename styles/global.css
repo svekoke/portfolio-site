@@ -5,7 +5,10 @@
 }
 
 body {
+  min-inline-size: 375px;
+  /*max-inline-size: 1440px;*/
   margin: 0 auto;
+  max-inline-size: 1440px;
   font-family: "Georgia", serif;
   display: flex;
   justify-content: center; /* Центрирует хедер по горизонтали */
@@ -13,6 +16,13 @@ body {
   flex-direction: column;
   background-color: #fff9ec;
 }
+
+/* main {
+  max-width: 100%;
+}
+*/
+
+
 
 h1,
 h2,
