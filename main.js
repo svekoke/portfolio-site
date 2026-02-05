@@ -1,0 +1,1 @@
+(()=>{"use strict";function t(t,e){fetch(t).then(function(t){return t.text()}).then(function(t){document.getElementById(e).innerHTML=t}).catch(function(t){return console.error("Ошибка загрузки HTML:",t)})}t("./partials/header.html","header-container"),t("./partials/footer.html","footer-container")})();
