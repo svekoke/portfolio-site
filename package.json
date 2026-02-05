@@ -1,0 +1,35 @@
+{
+  "name": "dmitriy-turin-website",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "description": "Статический сайт для Дмитрия Тюрина",
+  "scripts": {
+    "build": "webpack --mode production",
+    "dev": "webpack serve --mode development",
+    "watch": "webpack --watch",
+    "lint": "eslint --ext .js ./src",
+    "lint:fix": "npm run lint -- --fix",
+    "format": "prettier ./src --write",
+    "start": "webpack serve --mode development"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.5",
+    "@babel/preset-env": "^7.21.5",
+    "babel-loader": "^9.1.2",
+    "copy-webpack-plugin": "^13.0.1",
+    "css-loader": "^6.7.3",
+    "eslint": "^8.39.0",
+    "eslint-config-prettier": "^8.8.0",
+    "html-webpack-plugin": "^5.5.1",
+    "mini-css-extract-plugin": "^2.7.5",
+    "postcss-loader": "^7.3.0",
+    "prettier": "^2.8.8",
+    "resolve-url-loader": "^5.0.0",
+    "terser-webpack-plugin": "^5.3.10",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.81.0",
+    "webpack-cli": "^5.0.2",
+    "webpack-dev-server": "^4.13.3"
+  }
+}
