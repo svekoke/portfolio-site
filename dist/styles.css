@@ -47,7 +47,7 @@ img {
   width: 100%;
 }
 
-.header {
+#header-container {
   margin: 0;
   width: 100%;
   display: flex;
@@ -357,7 +357,7 @@ img {
   margin-top: 34px;
 }
 
-.footer {
+#footer-container {
   background-color: #221009;
   width: 100%;
   display: flex;

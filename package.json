@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "description": "Статический сайт для Дмитрия Тюрина",
+  "homepage": "https://svekoke.github.io/portfolio-site", 
   "scripts": {
     "build": "webpack --mode production",
     "dev": "webpack serve --mode development",
@@ -11,7 +12,8 @@
     "lint": "eslint --ext .js ./src",
     "lint:fix": "npm run lint -- --fix",
     "format": "prettier ./src --write",
-    "start": "webpack serve --mode development"
+    "start": "webpack serve --mode development",
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
     "@babel/core": "^7.21.5",
@@ -21,6 +23,7 @@
     "css-loader": "^6.7.3",
     "eslint": "^8.39.0",
     "eslint-config-prettier": "^8.8.0",
+    "gh-pages": "^6.3.0",
     "html-webpack-plugin": "^5.5.1",
     "mini-css-extract-plugin": "^2.7.5",
     "postcss-loader": "^7.3.0",
