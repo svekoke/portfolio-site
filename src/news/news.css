@@ -9,16 +9,19 @@
   display: flex;
   justify-content: flex-start;
   width: 100%;
-  padding-top: 19px;
+  padding-top: 18px;
   padding-bottom: 19px;
-  padding-left: 30px;
+  padding-left: 28px;
 }
 
 .button-return {
+  display: flex;
+  gap: 11px;
+  align-items: center;
   border-radius: 15px;
   font-family: "Georgia", serif;
   background-color: #fff9ec;
-  padding: 12px 66px 12px 31px;
+  padding: 10px 18px;
   box-shadow: 4px 4px 10px rgba(55, 52, 52, 0.25);
   border: 1px solid rgba(34, 16, 9, 0.4);
   font-size: 22px;
@@ -27,12 +30,43 @@
   font-weight: 400;
 }
 
-.button-return::after {
-  content: ""; /* Стрелка, можно использовать символ или сделать через градиент */
-  background-image: url("../images/icon-return.svg");
-  width: 25px;
-  height: 15px;
-  position: absolute;
-  right: 15px; /* Позиция изображения стрелки */
-  bottom: 16px;
+.new {
+  margin: 40px 118px 102px 118px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.new-name {
+  font-size: 24px;
+  line-height: 40px;
+  letter-spacing: 0.13em;
+  font-weight: 700;
+}
+
+.new-name-data {
+  font-size: 17px;
+  line-height: 23px;
+  letter-spacing: 0.13em;
+  font-weight: 700;
+}
+
+.new-container {
+  margin-top: 15px;
+  font-size: 17px;
+  line-height: 36px;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+  padding: 36px 88px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  align-items: center;
+}
+
+.new-photo-change {
+  max-width: 688px;
 }

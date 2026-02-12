@@ -208,8 +208,6 @@
 }
 
 .section-news {
-  margin-top: 92px;
-  margin-bottom: 102px;
   display: flex;
   flex-direction: column;
   gap: 71px;
