@@ -1,0 +1,1 @@
+import"./styles/global.css";import"./styles/style.css";function loadHTML(e,t){fetch("/partials/"+e).then(e=>e.text()).then(e=>{document.getElementById(t).innerHTML=e}).catch(e=>console.error("Ошибка загрузки HTML:",e))}loadHTML("header.html","header-container"),loadHTML("footer.html","footer-container");

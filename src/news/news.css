@@ -1,0 +1,38 @@
+.new {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.under-header {
+  background-color: #221009;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  padding-top: 19px;
+  padding-bottom: 19px;
+  padding-left: 30px;
+}
+
+.button-return {
+  border-radius: 15px;
+  font-family: "Georgia", serif;
+  background-color: #fff9ec;
+  padding: 12px 66px 12px 31px;
+  box-shadow: 4px 4px 10px rgba(55, 52, 52, 0.25);
+  border: 1px solid rgba(34, 16, 9, 0.4);
+  font-size: 22px;
+  line-height: 23px;
+  letter-spacing: 0.13em;
+  font-weight: 400;
+}
+
+.button-return::after {
+  content: ""; /* Стрелка, можно использовать символ или сделать через градиент */
+  background-image: url("../images/icon-return.svg");
+  width: 25px;
+  height: 15px;
+  position: absolute;
+  right: 15px; /* Позиция изображения стрелки */
+  bottom: 16px;
+}

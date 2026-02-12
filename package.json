@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "description": "Статический сайт для Дмитрия Тюрина",
-  "homepage": "https://svekoke.github.io/portfolio-site", 
+  "homepage": "https://svekoke.github.io/portfolio-site",
   "scripts": {
     "build": "webpack --mode production",
     "dev": "webpack serve --mode development",

@@ -312,7 +312,7 @@ img {
 
 .button-read-more::after {
   content: ""; /* Стрелка, можно использовать символ или сделать через градиент */
-  background-image: url(753f3c3aa5d47c374557.svg);
+  background-image: url(8175efbd9d506e7533d7.svg);
   width: 25px;
   height: 15px;
   position: absolute;
