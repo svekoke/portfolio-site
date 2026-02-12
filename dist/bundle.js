@@ -1,2 +1,0 @@
-(()=>{"use strict";function loadHTML(e,t){fetch(e).then(e=>e.text()).then(e=>{document.getElementById(t).innerHTML=e}).catch(e=>console.error("Ошибка загрузки HTML:",e))}loadHTML("./partials/header.html","header-container"),loadHTML("./partials/footer.html","footer-container")})();
-//# sourceMappingURL=bundle.js.map
