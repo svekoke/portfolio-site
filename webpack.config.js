@@ -6,7 +6,6 @@ const TerserPlugin = require("terser-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 const isProduction = process.env.NODE_ENV == "production";
-const stylesHandler = MiniCssExtractPlugin.loader;
 
 const config = {
   entry: {
@@ -16,46 +15,39 @@ const config = {
   devtool: "source-map",
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "[name].[contenthash:8].js",
+    filename: isProduction ? "[name].[contenthash:8].js" : "[name].js", // ← bundle.js → index.js
     clean: true,
   },
   devServer: {
     open: true,
-    host: "localhost",
     port: 8080,
     hot: true,
-    watchFiles: ["src/**/*"],
     static: {
-      directory: path.join(__dirname, "dist"),
+      directory: path.resolve(__dirname, "dist"),
     },
   },
   plugins: [
-    // Главная страница
     new HtmlWebpackPlugin({
       template: "src/index.html",
       filename: "index.html",
-      chunks: ["index"],
+      chunks: ["index"], // ← ТОЛЬКО index.js для главной
     }),
-
-    // Страница новости
     new HtmlWebpackPlugin({
       template: "src/news/news.html",
       filename: "news/news.html",
-      chunks: ["news"],
+      chunks: ["news"], // ← ТОЛЬКО news.js для страницы новостей
     }),
-
     new MiniCssExtractPlugin({
-      filename: "[name].[contenthash:8].css",
+      filename: isProduction ? "[name].[contenthash:8].css" : "[name].css",
     }),
-
     new CopyWebpackPlugin({
       patterns: [
         { from: "src/partials", to: "partials" },
+        { from: "src/data", to: "data" },
         { from: "src/images", to: "images" },
         { from: "src/fonts", to: "fonts" },
       ],
     }),
-
     new DefinePlugin({
       "process.env.DEVELOPMENT": !isProduction,
     }),
@@ -68,54 +60,29 @@ const config = {
         use: "babel-loader",
       },
       {
-        test: /\.(ts|tsx)$/i,
-        use: ["babel-loader", "ts-loader"],
-        exclude: /node_modules/,
-      },
-      {
         test: /\.scss$/i,
         use: [
-          stylesHandler,
+          MiniCssExtractPlugin.loader,
           "css-loader",
           "postcss-loader",
-          "resolve-url-loader",
-          {
-            loader: "sass-loader",
-            options: {
-              sourceMap: true,
-              sassOptions: {
-                includePaths: ["src/scss"],
-              },
-            },
-          },
+          "sass-loader",
         ],
       },
       {
         test: /\.css$/i,
-        use: [stylesHandler, "css-loader", "postcss-loader"],
+        use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
       },
       {
-        test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: "asset/resource",
         generator: {
-          filename: "assets/[hash][ext][query]",
+          filename: "images/[name][ext]",
         },
       },
     ],
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".jsx", ".js"],
-  },
-  optimization: {
-    minimize: isProduction,
-    minimizer: [
-      new TerserPlugin({
-        terserOptions: {
-          keep_classnames: true,
-          keep_fnames: true,
-        },
-      }),
-    ],
+    extensions: [".js"],
   },
 };
 
