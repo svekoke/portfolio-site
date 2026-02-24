@@ -30,7 +30,7 @@ async function loadFullNews() {
     document.querySelector(".new-name").textContent = article.full.title;
     document.querySelector(".new-name-data").textContent = article.full.date;
     document.querySelector(".new-text-begin").textContent = article.full.intro;
-    document.querySelector(".new-text-main").textContent = article.full.content;
+    document.querySelector(".new-text-main").innerHTML = article.full.content;
 
     const img = document.querySelector(".new-photo-change");
     const imageName = article.full.image.split("/").pop();
