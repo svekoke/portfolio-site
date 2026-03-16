@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../fonts/fonts.css" />
+    <link rel="stylesheet" href="../styles/global.css" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <title>Новость</title>
+  </head>
+  <body>
+    <div id="header-container"></div>
+    <div class="under-header">
+      <button class="button-return">
+        <img class="menu-button" src="/images/icon-return.svg" alt="menu" />
+        <a href="../index.html">Новости</a>
+      </button>
+    </div>
+    <main class="section-news">
+      <h2 class="news-about-text">НАУЧНЫЕ СТАТЬИ</h2>
+      <ul class="articles-list">
+        <li class="article-list-item">
+          <a
+            class="article-download"
+            href="/files/statja_osobennosti_strategicheskogo_marketinga.docx"
+            download
+          >
+            <img
+              src="../images/google-docs.png"
+              alt="Файл"
+              class="google-docs"
+            />
+            <span class="download-text">Скачать</span>
+          </a>
+          <div class="article-text">
+            <h3 class="article-data">загрузка...</h3>
+            <h2 class="article-name">загрузка...</h2>
+            <h3 class="article-info">загрузка...</h3>
+          </div>
+        </li>
+      </ul>
+    </main>
+    <div class="pagination">
+      <button class="page-prev">Назад</button>
+      <button class="page-btn" data-page="1">1</button>
+      <button class="page-btn" data-page="2">2</button>
+      <button class="page-btn" data-page="3">3</button>
+      <button class="page-btn" data-page="4">4</button>
+      <button class="page-next">Вперед</button>
+    </div>
+    <div id="footer-container"></div>
+    <script src="./articles.js"></script>
+  </body>
+</html>

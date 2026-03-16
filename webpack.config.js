@@ -11,6 +11,7 @@ const config = {
   entry: {
     index: "./src/index.js",
     news: "./src/news/news.js",
+    articles: "./src/articles/articles.js",
   },
   devtool: "source-map",
   output: {
@@ -37,6 +38,11 @@ const config = {
       filename: "news/news.html",
       chunks: ["news"], // ← ТОЛЬКО news.js для страницы новостей
     }),
+    new HtmlWebpackPlugin({
+      template: "src/articles/articles.html",
+      filename: "articles/articles.html",
+      chunks: ["articles"], // ← ТОЛЬКО articles.js для страницы новостей
+    }),
     new MiniCssExtractPlugin({
       filename: isProduction ? "[name].[contenthash:8].css" : "[name].css",
     }),
@@ -46,6 +52,7 @@ const config = {
         { from: "src/data", to: "data" },
         { from: "src/images", to: "images" },
         { from: "src/fonts", to: "fonts" },
+        { from: "src/files", to: "files" },
       ],
     }),
     new DefinePlugin({

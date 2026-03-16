@@ -37,4 +37,15 @@ async function loadNewsPreview() {
   }
 }
 
-document.addEventListener("DOMContentLoaded", loadNewsPreview);
+function setupArticlesLink() {
+  // ищем только ссылку внутри кнопки с классом teaching-articles
+  const link = document.querySelector(".teaching-articles a");
+  if (link) {
+    link.href = "./articles/articles.html"; // вместо #
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  loadNewsPreview();
+  setupArticlesLink();
+});
