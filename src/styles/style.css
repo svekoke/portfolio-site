@@ -275,7 +275,7 @@
   gap: 12px;
   font-family: Arial, Helvetica, sans-serif;
 }
-  
+
 .news-data {
   font-size: 17px;
   line-height: 23px;
@@ -304,6 +304,7 @@
   width: 323px;
   height: 216px;
   margin-top: 34px;
+  border-radius: 15px;
 }
 
 #footer-container {

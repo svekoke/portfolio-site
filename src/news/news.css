@@ -71,3 +71,11 @@
 .new-photo-change {
   max-width: 688px;
 }
+
+.new-container.no-image {
+  grid-template-columns: 1fr; /* убираем колонку для картинки */
+}
+
+.new-container.no-image .new-photo-change {
+  display: none;
+}

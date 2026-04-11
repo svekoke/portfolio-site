@@ -6,6 +6,9 @@ function loadHTML(filename, elementId) {
     .then((response) => response.text())
     .then((data) => {
       document.getElementById(elementId).innerHTML = data;
+      if (elementId === "header-container") {
+        setupMenuLinks();
+      }
     })
     .catch((error) => console.error("Ошибка загрузки HTML:", error));
 }
@@ -13,15 +16,33 @@ function loadHTML(filename, elementId) {
 loadHTML("./partials/header.html", "header-container");
 loadHTML("./partials/footer.html", "footer-container");
 
+// Функция для  отображения даты: "2025-10-30" в "30.10.2025"
+function formatDisplayDate(dateStr) {
+  const [year, month, day] = dateStr.split("-");
+  return `${day}.${month}.${year}`;
+}
+
 async function loadNewsPreview() {
   try {
-    const response = await fetch("/data/news.json"); // ← Абсолютный путь!
+    const response = await fetch("/data/news.json");
     const data = await response.json();
-    const LatestNews = data.news.slice(0, 3);
 
-    LatestNews.forEach((article, index) => {
+    // 🔥 СОРТИРУЕМ ПО ДАТЕ (новые сверху)
+    const sortedNews = [...data.news].sort((a, b) => {
+      return new Date(b.preview.date) - new Date(a.preview.date);
+    });
+
+    // Берём первые 3 ПОСЛЕ сортировки
+    const latestNews = sortedNews.slice(0, 3);
+
+    latestNews.forEach((article, index) => {
       const preview = document.querySelectorAll(".news-list-item")[index];
-      preview.querySelector(".news-data").textContent = article.preview.date; // ← preview!
+      if (!preview) return;
+
+      // Преобразуем дату в красивый формат для показа
+      const displayDate = formatDisplayDate(article.preview.date);
+
+      preview.querySelector(".news-data").textContent = displayDate;
       preview.querySelector(".news-name").textContent = article.preview.title;
       preview.querySelector(".news-info").textContent =
         article.preview.excerpt.substring(0, 100) + "...";
@@ -38,11 +59,35 @@ async function loadNewsPreview() {
 }
 
 function setupArticlesLink() {
-  // ищем только ссылку внутри кнопки с классом teaching-articles
   const link = document.querySelector(".teaching-articles a");
   if (link) {
-    link.href = "./articles/articles.html"; // вместо #
+    link.href = "./articles/articles.html";
   }
+}
+
+function setupMenuLinks() {
+  const buttons = document.querySelectorAll(".menu-list .list-item-button");
+  console.log("Найдено кнопок меню:", buttons.length);
+
+  buttons.forEach((btn, index) => {
+    btn.style.cursor = "pointer";
+    console.log(`Кнопка ${index}:`, btn.textContent);
+
+    switch (index) {
+      case 0: // "Новости"
+        btn.onclick = () => {
+          console.log("→ latest/latest.html");
+          window.location.href = "./latest/latest.html";
+        };
+        break;
+      case 1: // "Обо мне"
+        btn.onclick = () => console.log("Обо мне");
+        break;
+      case 2: // "Отзывы"
+        btn.onclick = () => console.log("Отзывы");
+        break;
+    }
+  });
 }
 
 document.addEventListener("DOMContentLoaded", () => {

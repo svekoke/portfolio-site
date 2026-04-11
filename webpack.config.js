@@ -12,6 +12,7 @@ const config = {
     index: "./src/index.js",
     news: "./src/news/news.js",
     articles: "./src/articles/articles.js",
+    latest: "./src/latest/latest.js",
   },
   devtool: "source-map",
   output: {
@@ -42,6 +43,11 @@ const config = {
       template: "src/articles/articles.html",
       filename: "articles/articles.html",
       chunks: ["articles"], // ← ТОЛЬКО articles.js для страницы новостей
+    }),
+    new HtmlWebpackPlugin({
+      template: "src/latest/latest.html",
+      filename: "latest/latest.html",
+      chunks: ["latest"],
     }),
     new MiniCssExtractPlugin({
       filename: isProduction ? "[name].[contenthash:8].css" : "[name].css",

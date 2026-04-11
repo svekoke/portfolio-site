@@ -32,9 +32,20 @@ async function loadFullNews() {
     document.querySelector(".new-text-begin").textContent = article.full.intro;
     document.querySelector(".new-text-main").innerHTML = article.full.content;
 
+    // 🔥 РАБОТА С КАРТИНКОЙ
     const img = document.querySelector(".new-photo-change");
-    const imageName = article.full.image.split("/").pop();
-    img.src = `/images/${imageName}`;
+
+    if (article.full.image && article.full.image.trim() !== "") {
+      // Картинка есть — показываем
+      const imageName = article.full.image.split("/").pop();
+      img.src = `/images/${imageName}`;
+      img.style.display = "block"; // или inline-block, смотря как у тебя
+    } else {
+      // Картинки нет — скрываем элемент
+      img.style.display = "none";
+      // Добавляем класс к контейнеру для растягивания текста
+      document.querySelector(".new-container").classList.add("no-image");
+    }
   } catch (error) {
     console.error("Ошибка загрузки статьи:", error);
   }
